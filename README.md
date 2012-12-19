@@ -12,10 +12,10 @@ Requirements
 Compiling
 ---------
 
-Compile
+- Compile
 g++ -Isrc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/OAuthClient.d" -MT"src/OAuthClient.d" -o "src/OAuthClient.o" "../src/OAuthClient.cpp"
 
-Archive
+- Archive
 ar -x liboauthcpp.a ("to extract into objects")
 ar -r  "libEvimed-connect-cpp.a"  ./src/HttpClient.o ./src/OAuthClient.o   src/HMAC_SHA1.o src/base64.o src/HttpClient.o src/SHA1.o src/liboauthcpp.o src/urlencode.o
 
