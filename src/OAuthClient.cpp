@@ -93,8 +93,15 @@ namespace com {
 
 		string OAuthClient::getData(string url){
 			string queryString = getQuery(url, true);
+			string append ="?";
+			size_t pos = url.find('?');
 
-			url = url + "?" + queryString;
+			if(pos!=string::npos)
+				url = url.substr(0,pos);
+
+			cout<<url.find('?')<<endl;
+			url = url + append + queryString;
+
 			cout << " url " + url<< endl;
 			string response = httpClient.get(url);
 			return response;
