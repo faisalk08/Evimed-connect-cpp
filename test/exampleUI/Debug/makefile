@@ -44,7 +44,7 @@ all: exampleUI
 exampleUI: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++ -L"/Users/indra/Documents/workspace_indigo/c++_project/evimedwrappercpp/Debug" -framework QtGui -framework QtCore -o "exampleUI" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug -framework QtGui -framework QtCore -o "exampleUI" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

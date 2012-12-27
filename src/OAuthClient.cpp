@@ -16,7 +16,7 @@ namespace com {
 		namespace EvimedConnect {
 
 		OAuthClient::OAuthClient(string url, string eConf, string uConf){
-			cout << "Initialize" << endl;
+			cout << "Construct" << endl;
 
 			eConfig = eConf;
 			uConfig = uConf;
@@ -42,6 +42,7 @@ namespace com {
 		}
 
 		bool OAuthClient::initialize(){
+			cout << "Initialize" << endl;
 			if(consumer!=0) {delete consumer;	consumer = NULL;}
 			if(client!=0) {delete client;	client = NULL;}
 
@@ -58,6 +59,7 @@ namespace com {
 		}
 
 		bool OAuthClient::initClient(string oauth_key, string oauth_secret){
+			cout << "Init Client" << endl;
 
 			if(client!=NULL){
 				delete client; client = NULL;
@@ -142,13 +144,6 @@ namespace com {
 			cout << "Response " + response << endl;
 
 			if(response.find("This request requires HTTP authentication")!=string::npos){
-				cout << "ERASE" << endl;
-				userConfig.put("user.oauth_key" , "");
-				userConfig.put("user.oauth_secret" , "");
-				userConfig.put("user." + url, "");
-				userConfig.erase("user." + url);
-				write_ini(uConfig, userConfig);
-
 				logout();//try to logout previous key and secret
 				return "";
 			}
@@ -184,6 +179,12 @@ namespace com {
 		}
 
 		string OAuthClient::logout(){
+
+			cout << "ERASE" << endl;
+			userConfig.clear();
+			userConfig.put("user.oauth_key" , "");
+			userConfig.put("user.oauth_secret" , "");
+			write_ini(uConfig, userConfig);
 
 			if(!init) return "";
 

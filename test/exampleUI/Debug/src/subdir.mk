@@ -20,7 +20,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include -I"/Users/indra/Documents/workspace_indigo/c++_project/evimedwrappercpp/src" -I"/Users/indra/Documents/workspace_indigo/c++_project/exampleUI/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include -I/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/src -I"/Users/indra/Documents/workspace_indigo/c++_project/exampleUI/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

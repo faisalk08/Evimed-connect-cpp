@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -levimedwrappercpp
+LIBS := -lEvimed-connect-cpp -lcurl
 

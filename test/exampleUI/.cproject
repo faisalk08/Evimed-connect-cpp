@@ -25,10 +25,11 @@
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.929262204" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug">
 								<option id="macosx.cpp.link.option.flags.846660333" name="Linker flags" superClass="macosx.cpp.link.option.flags" value="-framework QtGui -framework QtCore" valueType="string"/>
 								<option id="macosx.cpp.link.option.libs.2062324083" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="evimedwrappercpp"/>
+									<listOptionValue builtIn="false" value="Evimed-connect-cpp"/>
+									<listOptionValue builtIn="false" value="curl"/>
 								</option>
 								<option id="macosx.cpp.link.option.paths.423818979" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/evimedwrappercpp/Debug}&quot;"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.1934082799" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

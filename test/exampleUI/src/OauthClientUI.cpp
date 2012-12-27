@@ -1,7 +1,7 @@
 /*
  * OauthClient.cpp
  *
- *  Created on: Dec 6, 2012
+ *  Created on: Dec 27, 2012
  *      Author: indra
  */
 #include <OauthClientUI.h>
@@ -73,16 +73,17 @@ OauthClientUI::OauthClientUI(QWidget *parent): QWidget (parent){
 }
 
 void OauthClientUI::authorize(){
+	string evimedConfig = "/Users/indra/Documents/workspace_indigo/c++_project/exampleUI/exampleUI.app/Contents/MacOS/config/evimed.config";
+	string userConfig = "/Users/indra/Documents/workspace_indigo/c++_project/exampleUI/exampleUI.app/Contents/MacOS/config/user.properties";
 
 	if(bRequest){
 
 		if(oauthClient)
-			oauthClient = new com::evimed::portal::EvimedConnect::OAuthClient(serverText->text().toStdString());
+			oauthClient =  new com::evimed::portal::EvimedConnect::OAuthClient(serverText->text().toStdString(), evimedConfig, userConfig);
 		else
 			oauthClient->serverUrl = serverText->text().toStdString();
 
 		string response = oauthClient->request();
-		string url = serverText->text().toStdString() + authorize_url + "?" + response;
 
 		bRequest = false;
 		bAccess = true;
@@ -90,7 +91,7 @@ void OauthClientUI::authorize(){
 		authorizeButton->setText("access");
 
 //		system(url.insert(0, "open ").c_str());
-		webView->load(QUrl(url.c_str()));
+		webView->load(QUrl(response.c_str()));
 		webView->show();
 //		responseText->setText(url.insert(0, "Please go to the browser and login with this URL").c_str());
 
