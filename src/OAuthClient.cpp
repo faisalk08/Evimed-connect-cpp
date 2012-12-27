@@ -15,30 +15,63 @@ namespace com {
 
 		namespace EvimedConnect {
 
-		OAuthClient::OAuthClient(string url){
+		OAuthClient::OAuthClient(string url, string eConf, string uConf){
 			cout << "Initialize" << endl;
-			request_token_url = "/oauth/request_token";
-			access_token_url = "/oauth/access_token";
-			authorize_url = "/oauth/authorize";
-			logout_url = "/oauth/logout";
+
+			eConfig = eConf;
+			uConfig = uConf;
+
+			read_ini(eConfig, evimedConfig);
+			read_ini(uConfig, userConfig);
+
+			request_token_url = evimedConfig.get<string>("evimed.request_token_url");
+			access_token_url = evimedConfig.get<string>("evimed.access_token_url");
+			authorize_url = evimedConfig.get<string>("evimed.authorize_url");
+			logout_url = evimedConfig.get<string>("evimed.logout_url");
+
 			consumer = NULL;
 			client = NULL;
+			init = false;
 
 			if(url.empty()) throw 1;
 
 			serverUrl = url;
 
+			if(initialize()) init = true;
+
 		}
 
-		void OAuthClient::initialize(){
+		bool OAuthClient::initialize(){
 			if(consumer!=0) {delete consumer;	consumer = NULL;}
 			if(client!=0) {delete client;	client = NULL;}
 
-			consumerKey = "html5TestConsumer";
-			consumerSecret = "html5TestAPIOAuthKey";
+			consumerKey = evimedConfig.get<string>("evimed.consumerKey");
+			consumerSecret = evimedConfig.get<string>("evimed.consumerSecret");
 
 			consumer = new Consumer(consumerKey, consumerSecret);
-			client = new Client(consumer);
+
+			string oauth_key = userConfig.get<string>("user.oauth_key", "");
+			string oauth_secret = userConfig.get<string>("user.oauth_secret", "");
+			if(initClient(oauth_key, oauth_secret)) return true;
+
+			return false;
+		}
+
+		bool OAuthClient::initClient(string oauth_key, string oauth_secret){
+
+			if(client!=NULL){
+				delete client; client = NULL;
+			}
+
+			if(!oauth_secret.empty() && !oauth_key.empty()){
+				token = new Token(oauth_key, oauth_secret);
+				client = new Client(consumer, token);
+				return true;
+			}else{
+				client = new Client(consumer);
+				return false;
+			}
+
 		}
 
 		string OAuthClient::getQuery(string url, bool withPin){
@@ -53,7 +86,7 @@ namespace com {
 		}
 
 		string OAuthClient::request(){
-			initialize();
+			if(init) initClient();
 
 			string url = serverUrl + request_token_url;
 			cout << "Requesting" << endl;
@@ -63,13 +96,10 @@ namespace com {
 			string response = httpClient.get(url);
 
 			Token response_token = Token::extract(response);
-			token = new Token(response_token.key(), response_token.secret());
-
-			delete client;	client = NULL;
-
-			client = new Client(consumer, token);
+			initClient(response_token.key(), response_token.secret());
 
 			cout << "response " + response<< endl;
+			response = serverUrl + authorize_url + "?" + response;
 			return response;
 		}
 
@@ -77,38 +107,86 @@ namespace com {
 			string url = serverUrl + access_token_url;
 			cout << "accessing" << endl;
 			string queryString = getQuery(url, true);
+
 			url = url + "?" + queryString;
 			cout << " url " + url<< endl;
+
 			string response = httpClient.get(url);
 			cout << "response " + response << endl;
 
 			Token response_token = Token::extract(response);
-			token = new Token(response_token.key(), response_token.secret());
-			delete client; client = NULL;
+			init = initClient(response_token.key(), response_token.secret());
 
-			client = new Client(consumer, token);
+			userConfig.put("user.oauth_key", response_token.key());
+			userConfig.put("user.oauth_secret", response_token.secret());
+			write_ini(uConfig, userConfig);
 
 			return response;
 		}
 
-		string OAuthClient::getData(string url){
-			string queryString = getQuery(url, true);
-			string append ="?";
-			size_t pos = url.find('?');
+		string OAuthClient::getData(string url, bool automatically){
 
-			if(pos!=string::npos)
-				url = url.substr(0,pos);
+			string urlSigned;
+			string response;
 
-			cout<<url.find('?')<<endl;
-			url = url + append + queryString;
+			//Get url Signed from user properties
+			urlSigned = userConfig.get("user." + url, "");
+			if(urlSigned.empty()) {
 
-			cout << " url " + url<< endl;
-			string response = httpClient.get(url);
+				urlSigned = getSignedUrl(url);
+
+			}
+
+			cout << " url Signed " + urlSigned<< endl;
+			response = httpClient.get(urlSigned);
+			cout << "Response " + response << endl;
+
+			if(response.find("This request requires HTTP authentication")!=string::npos){
+				cout << "ERASE" << endl;
+				userConfig.put("user.oauth_key" , "");
+				userConfig.put("user.oauth_secret" , "");
+				userConfig.put("user." + url, "");
+				userConfig.erase("user." + url);
+				write_ini(uConfig, userConfig);
+
+				logout();//try to logout previous key and secret
+				return "";
+			}
+
+
 			return response;
 
+		}
+
+		string OAuthClient::getSignedUrl(string url){
+			string urlSigned;
+			cout << " url Signed is Empty" << endl;
+			string append ="?";
+			string parameter;
+			size_t pos = url.find(append);
+
+			if(pos!=string::npos){ // if '?' found
+				parameter = url.substr(pos+1, url.size()-1);
+				url = url.substr(0,pos);
+			}
+
+			string query = getQuery(url, false);
+
+			if(parameter.empty())
+				urlSigned = url + append + query;
+			else
+				urlSigned = url + append + query + "&" + parameter;
+
+			userConfig.put("user." + url, urlSigned);
+			write_ini(uConfig, userConfig);
+
+			return urlSigned;
 		}
 
 		string OAuthClient::logout(){
+
+			if(!init) return "";
+
 			string url = serverUrl + logout_url;
 			cout << "logout" << endl;
 			string queryString = getQuery(url, true);
