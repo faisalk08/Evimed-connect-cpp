@@ -15,8 +15,8 @@ using namespace std;
 class HttpClient {
 public:
 
-	string get(string url);
-	string post(string url, string query);
+	string get(string url, bool write=false);
+	string post(string url, string query="", bool write=false);
 
 private:
 
