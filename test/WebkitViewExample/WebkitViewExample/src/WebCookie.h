@@ -19,7 +19,7 @@ using namespace std;
 
 class WebCookie : public QNetworkCookieJar{
 public:
-	WebCookie(QObject *parent = 0);
+	WebCookie();
 	virtual ~WebCookie();
 	QList<QNetworkCookie> cookiesForUrl(const QUrl &url) const;
 	bool setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url);

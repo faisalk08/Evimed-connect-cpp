@@ -1,12 +1,9 @@
-src/WebkitViewExample.d src/WebkitViewExample.o:  \
- ../src/WebkitViewExample.cpp \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QApplication \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h \
+src/WebkitUI.d src/WebkitUI.o: ../src/WebkitUI.cpp ../src/WebkitUI.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QWidget \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwidget.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwidget.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobjectdefs.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qnamespace.h \
@@ -17,6 +14,10 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qconfig.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfeatures.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qfeatures.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstring.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qstring.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qchar.h \
@@ -41,30 +42,16 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qalgorithms.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qscopedpointer.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h \
-  /Users/indra/Documents/workspace_indigo/c++_project/WebkitViewExample/src/WebkitUI.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QWidget \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwidget.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwidget.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qmargins.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qmargins.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpaintdevice.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/painting/qpaintdevice.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qrect.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qrect.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpalette.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qpalette.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcolor.h \
@@ -117,6 +104,8 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/text/qfontinfo.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qsizepolicy.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qsizepolicy.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qkeysequence.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qkeysequence.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QPushButton \
@@ -164,6 +153,14 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QFile \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfile.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qfile.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QDir \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdir.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qdir.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfileinfo.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qfileinfo.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfile.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QFileInfo \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfileinfo.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/qwebview.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebview.h \
@@ -243,21 +240,26 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/../../src/network/access/qnetworkdiskcache.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qabstractnetworkcache.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/../../src/network/access/qabstractnetworkcache.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qnetworkrequest.h
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qnetworkrequest.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/QAbstractNetworkCache \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qabstractnetworkcache.h \
+  /Users/indra/Documents/projects/development/github/WebkitViewExample/WebkitViewExample/src/WebCookie.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QMap \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qmap.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QDataStream \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdatastream.h
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QApplication:
+../src/WebkitUI.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qapplication.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QWidget:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qapplication.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwidget.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwidget.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h:
 
@@ -278,6 +280,14 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfeatures.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qfeatures.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstring.h:
 
@@ -327,42 +337,6 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h:
-
-/Users/indra/Documents/workspace_indigo/c++_project/WebkitViewExample/src/WebkitUI.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QWidget:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwidget.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwidget.h:
-
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qmargins.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qmargins.h:
@@ -374,6 +348,14 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qrect.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qrect.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpalette.h:
 
@@ -479,6 +461,10 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qsizepolicy.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qkeysequence.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qkeysequence.h:
@@ -572,6 +558,22 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfile.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qfile.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QDir:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdir.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qdir.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfileinfo.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qfileinfo.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfile.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QFileInfo:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfileinfo.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView:
 
@@ -732,3 +734,17 @@ src/WebkitViewExample.d src/WebkitViewExample.o:  \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/../../src/network/access/qabstractnetworkcache.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qnetworkrequest.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/QAbstractNetworkCache:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtNetwork/qabstractnetworkcache.h:
+
+/Users/indra/Documents/projects/development/github/WebkitViewExample/WebkitViewExample/src/WebCookie.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QMap:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qmap.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QDataStream:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdatastream.h:

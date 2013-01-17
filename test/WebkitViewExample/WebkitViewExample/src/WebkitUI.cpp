@@ -17,9 +17,9 @@ WebkitUI::WebkitUI(QWidget *widget) : QWidget (widget){
 	webView->page()->networkAccessManager()->setCookieJar(cookie);
 
 
-	 QNetworkAccessManager *manager = webView->page()->networkAccessManager();
+/*	 QNetworkAccessManager *manager = webView->page()->networkAccessManager();
 	 connect(manager, SIGNAL(finished(QNetworkReply*)),
-			 this, SLOT(namFinished(QNetworkReply*)));
+			 this, SLOT(namFinished(QNetworkReply*)));*/
 
 	webView->load(QUrl("http://www.evimed.com/erecruitment/"));
 	webView->show();

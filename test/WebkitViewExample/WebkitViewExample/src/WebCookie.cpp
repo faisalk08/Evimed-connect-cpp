@@ -8,8 +8,8 @@
 #include "WebCookie.h"
 
 
-WebCookie::WebCookie(QObject *parent){
-	cout << "LOAD cookies";
+WebCookie::WebCookie(){
+//	cout << "LOAD cookies" << endl;
 
 	QFile file("cache/cookies.txt");
 	file.open(QIODevice::ReadOnly);
@@ -20,7 +20,7 @@ WebCookie::WebCookie(QObject *parent){
 
 	data >> host >> name >> value >> path >> isSession >> isHttp >> isSecure;
 
-	cout << "Value " + QString(value).toStdString() ;
+//	cout << "Value " + QString(value).toStdString() ;
 
 	bool http;
 	isHttp.contains("TRUE")? http = true: http=false;
@@ -34,7 +34,7 @@ WebCookie::WebCookie(QObject *parent){
 	nc.setHttpOnly(http);
 	nc.setSecure(secure);
 
-	cout << QString(nc.value()).toStdString() << endl;
+//	cout << QString(nc.value()).toStdString() << endl;
 
 	QList<QNetworkCookie> list;
 	list.append(nc);
@@ -49,11 +49,11 @@ WebCookie::WebCookie(QObject *parent){
 QList<QNetworkCookie> WebCookie::cookiesForUrl(const QUrl &url) const{
 
 	if(!this->cookies.value(url.host()).isEmpty()){
-		cout << "GET My Cookies" << endl;
+//		cout << "GET My Cookies" << endl;
 		return this->cookies.value(url.host());
 	}
 
-	cout << "GET DEFAULT Cookies" << endl;
+//	cout << "GET DEFAULT Cookies" << endl;
 	return QNetworkCookieJar::cookiesForUrl(url);
 }
 
@@ -69,7 +69,7 @@ bool WebCookie::storeCookies(QList<QNetworkCookie> cookies, QUrl url){
 		data << cookie.value();
 		data << cookie.path();
 		cookie.isSessionCookie()? Bool = "TRUE": Bool="FALSE";
-		cout << "Session " + Bool << endl;
+//		cout << "Session " + Bool << endl;
 		data << Bool.c_str();
 		cookie.isHttpOnly()? Bool = "TRUE": Bool="FALSE";
 		data << Bool.c_str();
@@ -85,7 +85,7 @@ bool WebCookie::storeCookies(QList<QNetworkCookie> cookies, QUrl url){
 
 bool WebCookie::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url){
 
-		cout << "ADD current Cookies" << endl;
+//		cout << "ADD current Cookies" << endl;
 		bool update;
 		QList<QNetworkCookie> cookies = this->cookies.value(url.host());
 		this->cookies.remove(url.host());
@@ -97,17 +97,17 @@ bool WebCookie::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const
 				foreach(QNetworkCookie prevCookie, cookies){
 
 					if(newCookie.name().contains(prevCookie.name())){
-						cout << "FOUND same Cookie name " + QString(newCookie.value()).toStdString()<< endl;
+//						cout << "FOUND same Cookie name " + QString(newCookie.value()).toStdString()<< endl;
 						cookies.removeOne(prevCookie);
 						cookies.append(newCookie);
-						cout << "CHANGE Cookie name to " + QString(prevCookie.value()).toStdString()<< endl;
+//						cout << "CHANGE Cookie name to " + QString(prevCookie.value()).toStdString()<< endl;
 						update = true;
 						break;
 					}
 					i++;
 				}
 				if(!update) {
-					cout << "APPEND current Cookies" << endl;
+//					cout << "APPEND current Cookies" << endl;
 					cookies+=newCookie;
 				}
 			}
@@ -115,9 +115,9 @@ bool WebCookie::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const
 		}
 
 		this->cookies.insert(url.host(),cookies);
-		foreach(QNetworkCookie cookie, cookies){
+		/*foreach(QNetworkCookie cookie, cookies){
 			cout << "CURRENT Cookie name " + QString(cookie.value()).toStdString()<< endl;
-		}
+		}*/
 
 
 		storeCookies(cookies, url);
