@@ -24,6 +24,7 @@ namespace com {
 			consumer = NULL;
 			client = NULL;
 			init = false;
+			authenticated = false;
 
 			eConfig = eConf;
 			uConfig = uConf;
@@ -35,16 +36,18 @@ namespace com {
 			read_ini(eConfig, evimedConfig);
 			read_ini(uConfig, userConfig);
 
-			//Get all the service URLs from the Evimed Config file
+			//Get all service URLs from the Evimed Config file
 			request_token_url = evimedConfig.get<string>("evimed.request_token_url");
 			access_token_url = evimedConfig.get<string>("evimed.access_token_url");
 			authorize_url = evimedConfig.get<string>("evimed.authorize_url");
 			logout_url = evimedConfig.get<string>("evimed.logout_url");
 
+			//Get all Evimed APIs
 			patient_url = evimedConfig.get<string>("evimed.api_patient_url");
 			trialsearch_url = evimedConfig.get<string>("evimed.api_trialsearch_url");
 			trialrecruitment_url = evimedConfig.get<string>("evimed.api_trialrecruitment_url");
 			trialrecruitment_match_url = evimedConfig.get<string>("evimed.api_trialrecruitment_match_url");
+			trialrecruitment_status_url = evimedConfig.get<string>("evimed.api_trialrecruitment_status_url");
 			profile_url = evimedConfig.get<string>("evimed.api_profile_url");
 
 			cout << "Checking configuration Urls " + request_token_url << endl;
@@ -66,6 +69,8 @@ namespace com {
 			//Try to get the OAuth key and secret from User config
 			oauth_key = userConfig.get<string>("user.oauth_key", "");
 			oauth_secret = userConfig.get<string>("user.oauth_secret", "");
+			//Try to get User Information
+			emailAddress = userConfig.get<string>("user.emailAddress", "");
 
 			if(initClient(oauth_key, oauth_secret)) {
 				authenticated = authenticate();
@@ -80,12 +85,31 @@ namespace com {
 		}
 
 		bool OAuthClient::authenticate(){
+			cout << "Authenticate" << endl;
 			string url = serverUrl + profile_url;
+			string query = questionMark + "website=pm";
+
+			url+= query;
 			string response = getData(url);
 
 			if(response.empty()) return false;
 
+			cout << "response profile " + response << endl;
+
+			emailAddress = readJsonValue(response, "emailAddress");
+			userConfig.put("user.emailAddress", emailAddress);
+
 			return true;
+		}
+
+		string OAuthClient::readJsonValue(string jsonData, string key){
+			ptree jsonResponse;
+			stringstream s(jsonData);
+			read_json(s, jsonResponse);
+
+			string value = jsonResponse.get<string>(key);
+
+			return value;
 		}
 
 		bool OAuthClient::initClient(string oauth_key, string oauth_secret){
@@ -107,13 +131,20 @@ namespace com {
 		}
 
 		string OAuthClient::getQuery(string url, bool withPin){
-			cout << "query url " + url << endl;
+			cout << "query GET url " + url << endl;
 
-			if(client==0)
-				cout << "client is empty" << endl;
+			if(client==0) cout << "client is empty" << endl;
 			string queryString = client->getURLQueryString(OAuth::Http::Get, url, "", withPin);
 
-			cout << "end url " << endl;
+			return queryString;
+		}
+
+		string OAuthClient::postQuery(string url, bool withPin){
+			cout << "query POST url " + url << endl;
+
+			if(client==0) cout << "client is empty" << endl;
+			string queryString = client->getURLQueryString(OAuth::Http::Post, url, "", withPin);
+
 			return queryString;
 		}
 
@@ -155,8 +186,9 @@ namespace com {
 			cout << "response " + response << endl;
 
 			Token response_token = Token::extract(response);
-			init = initClient(response_token.key(), response_token.secret());
 
+			init = initClient(response_token.key(), response_token.secret());
+			authenticated = authenticate();
 			userConfig.put("user.oauth_key", response_token.key());
 			userConfig.put("user.oauth_secret", response_token.secret());
 			write_ini(uConfig, userConfig);
@@ -169,21 +201,15 @@ namespace com {
 			string urlSigned;
 			string response;
 
-			//Get url Signed from user properties
-//			urlSigned = userConfig.get("user." + url, "");
-//			if(urlSigned.empty()) {
+			urlSigned = getSignedUrl(url);
 
-				urlSigned = getSignedUrl(url);
-
-//			}
-
-			cout << " url Signed " + urlSigned<< endl;
+			cout << "url Signed " + urlSigned<< endl;
 			response = httpClient.get(urlSigned);
 			cout << "Response " + response << endl;
 
 			//If the response contains any of these sentences than return unsuccessfully attempt
 			if(response.find("This request requires HTTP authentication")!=string::npos || response.find("Login with your existing Evimed.com user name and password!")!=string::npos){
-//				logout();//try to logout previous key and secret
+//				logout();//try to logout from previous key and secret
 				return "";
 			}
 
@@ -197,7 +223,7 @@ namespace com {
 			string urlSigned;
 			string response;
 
-			urlSigned = getSignedUrl(url);
+			urlSigned = getSignedUrl(url, true);
 
 			cout << " url Signed " + urlSigned<< endl;
 			response = httpClient.post(urlSigned, data);
@@ -214,34 +240,25 @@ namespace com {
 
 		}
 
-		string OAuthClient::getSignedUrl(string url){
-			cout << "Get URL signed" << endl;
+		string OAuthClient::getSignedUrl(string url, bool post){
+//			cout << "Get URL signed" << endl;
 
 			string urlSigned="";
-			string append ="?";
-			string ampersand = "&";
 			string parameter;
-			size_t pos = url.find(append);
+			size_t pos = url.find(questionMark);
 
-
-			string query = getQuery(url, true);
-			cout << "query " + query << endl;
+			string query;
+			if(post)
+				query = postQuery(url, true);
+			else
+				query = getQuery(url, true);
 
 			if(pos!=string::npos){ // if '?' found
 				parameter = url.substr(pos+1, url.size()-1);
 				url = url.substr(0,pos);
 			}
-			/*if(parameter.empty())
-				urlSigned = url + append + query;
-			else
-				urlSigned = url + append + query + ampersand + parameter;*/
 
-			urlSigned = url + append + query;
-
-//			userConfig.put(p, urlSigned);
-//			write_ini(uConfig, userConfig);
-
-//			cout << "URL signed " + urlSigned << endl;
+			urlSigned = url + questionMark + query;
 
 			return urlSigned;
 		}
@@ -261,7 +278,6 @@ namespace com {
 			string queryString = getQuery(url, true);
 			url = url + questionMark + queryString;
 
-			cout << " url " + url<< endl;
 			string response = httpClient.get(url);
 			cout << "response " + response << endl;
 
@@ -291,21 +307,34 @@ namespace com {
 			id << patientId; s << start; e << end;
 
 			url = serverUrl + trialsearch_url + slash + id.str() + questionMark + "start=" + s.str() + ampersand + "end=" + e.str() + ampersand + "trialParameters=" + trialParameters;
-			cout<< url << endl;
 			string response = getData(url);
 
 			return response;
 
 		}
 
-		string OAuthClient::postTrialRecruitment(int patientId, int trialId){
+		string OAuthClient::postTrialRecruitment(int patientId, int trialId, string centerCode, string contactAddress, string contactPhone, string comment){
 			string url;
 			stringstream id, tId;
 			id << patientId; tId << trialId;
 
 			url = serverUrl + trialrecruitment_url;
-			string data = "patientId=" + id.str() + ampersand + "trialId=" + tId.str() + ampersand + "emailAddress=evimed@evimed.com" + ampersand + "trialCenterCode=Goettingen";
-			string response = postData(url, data);
+			string query = questionMark + "website=pm";
+			url+=query;
+//			string data = "patientId=" + id.str() + ampersand + "trialId=" + tId.str() + ampersand + "emailAddress=" + ampersand + "trialCenterCode=";
+
+			ptree jsonData;
+			jsonData.put("patientId", patientId);
+			jsonData.put("trialId", trialId);
+			jsonData.put("contactEmail", emailAddress);
+			jsonData.put("trialCenterCode", centerCode);
+			jsonData.put("comments", comment);
+			jsonData.put("contactPhone", contactPhone);
+			jsonData.put("contactAddress", contactAddress);
+			stringstream ss;
+			write_json(ss, jsonData);
+
+			string response = postData(url, ss.str());
 
 			return response;
 		}
@@ -320,12 +349,76 @@ namespace com {
 
 			url+= query;
 
-			cout << url << endl;
+			string response = getData(url);
+
+			return response;
+		}
+
+		string OAuthClient::getTrialRecruitmentStatus(int patientId){
+			string url;
+			stringstream id, tId;
+			id << patientId;
+
+			url = serverUrl + trialrecruitment_status_url;
+			string query = slash + id.str() + questionMark + "website=pm";
+
+			url+= query;
 
 			string response = getData(url);
 
 			return response;
 		}
+
+		string OAuthClient::getTrialRecruitmentWithId(int recruitmentId){
+			string url;
+			stringstream id, tId;
+			id << recruitmentId;
+
+			url = serverUrl + trialrecruitment_url;
+			string query = slash + id.str() + questionMark + "website=pm";
+
+			url+= query;
+
+			string response = getData(url);
+
+			return response;
+		}
+
+		list<string> OAuthClient::getJSONValue(string data, string arrayName, string key){
+			stringstream s(data);
+			ptree JsonResponse;
+			read_json(s, JsonResponse);
+
+			list<string> listValue;
+			BOOST_FOREACH(ptree::value_type &child, JsonResponse.get_child(arrayName)){
+//				cout << child.second.empty() << endl;
+				if(child.first.empty())
+					listValue.push_front(child.second.get<string>(key));
+				else
+					listValue.push_front(child.second.data());
+			}
+
+			return listValue;
+		}
+
+		map<string, string> OAuthClient::getJSONPair(string data, string arrayName){
+			stringstream s(data);
+			ptree JsonResponse;
+			read_json(s, JsonResponse);
+
+			map<string, string> mapKeyValue;
+			BOOST_FOREACH(ptree::value_type &child, JsonResponse.get_child(arrayName)){
+
+				string f(child.first.data());
+				string s(child.second.data());
+
+				mapKeyValue.insert(pair<string, string>(f, s));
+
+			}
+
+			return mapKeyValue;
+		}
+
 	}
 	}
 	}

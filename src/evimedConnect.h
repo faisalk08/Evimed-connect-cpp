@@ -14,6 +14,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/ini_parser.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/foreach.hpp>
 
 using namespace std;
 using namespace OAuth;
@@ -34,7 +35,7 @@ namespace com {
 					string authorize(string userName, string password);
 					string access();
 					string getData(string url);
-					string getSignedUrl(string url);
+					string getSignedUrl(string url, bool post=false);
 					string logout();
 					string serverUrl;
 					bool isAuthenticated();
@@ -42,9 +43,13 @@ namespace com {
 
 					string getPatient(int patientId=0);
 					string getTrialRecruitment(int patientId, int trialId);
-					string postTrialRecruitment(int patientId, int trialId);
+					string getTrialRecruitmentStatus(int patientId);
+					string getTrialRecruitmentWithId(int recruitmentId);
+					string postTrialRecruitment(int patientId, int trialId, string centerCode, string contactAddress="", string contactPhone="", string comment="");
 					string searchTrial(int patientId, int start=0, int end=5, string trialParameters="type%3D1");
 
+					list<string> getJSONValue(string data, string arrayName, string key);
+					map<string, string> getJSONPair(string data, string arrayName);
 
 				private:
 					string consumerKey;
@@ -57,6 +62,8 @@ namespace com {
 					bool initialize();
 					bool initClient(string oauth_key = "", string oauth_secret = "");
 					string getQuery(string url, bool withPin=false);
+					string postQuery(string url, bool withPin=false);
+					string readJsonValue(string jsonData, string key);
 
 					string request_token_url;
 					string access_token_url;
@@ -78,7 +85,10 @@ namespace com {
 					string patient_url;
 					string trialrecruitment_url;
 					string trialrecruitment_match_url;
+					string trialrecruitment_status_url;
 					string trialsearch_url;
+
+					string emailAddress;
 
 
 				};
