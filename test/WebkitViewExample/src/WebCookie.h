@@ -13,6 +13,7 @@
 #include <QtCore/QMap>
 #include <QtCore/QDataStream>
 #include <QtCore/QFile>
+#include <QtCore/QDir>
 
 using namespace std;
 
@@ -26,6 +27,7 @@ public:
 private:
 	QMap< QString, QList<QNetworkCookie> > cookies;
 	bool storeCookies(QList<QNetworkCookie> cookies, const QUrl url);
+	bool checkDir(string path);
 };
 
 #endif /* WEBCOOKIE_H_ */

@@ -7,9 +7,11 @@
 
 #include "WebCookie.h"
 
-
+static string cacheDir = "cache/";
 WebCookie::WebCookie(){
 //	cout << "LOAD cookies" << endl;
+
+	if(!checkDir(cacheDir)) return;
 
 	QFile file("cache/cookies.txt");
 	file.open(QIODevice::ReadOnly);
@@ -57,10 +59,25 @@ QList<QNetworkCookie> WebCookie::cookiesForUrl(const QUrl &url) const{
 	return QNetworkCookieJar::cookiesForUrl(url);
 }
 
+bool WebCookie::checkDir(string path){
+	QDir dir(path.c_str());
+	if(!dir.exists()){
+		cout << "Create Directory " + dir.absolutePath().toStdString() << endl;
+		QDir d = QDir();
+		d.mkpath(path.c_str());
+		return false;
+	}
+
+	return true;
+}
+
 bool WebCookie::storeCookies(QList<QNetworkCookie> cookies, QUrl url){
+
 	QFile file("cache/cookies.txt");
 	file.open(QIODevice::WriteOnly);
 	QDataStream data(&file);
+
+	checkDir(cacheDir);
 
 	foreach(QNetworkCookie cookie, cookies){
 		string Bool;
