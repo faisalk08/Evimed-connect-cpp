@@ -360,7 +360,7 @@ namespace com {
 			id << patientId;
 
 			url = serverUrl + trialrecruitment_status_url;
-			string query = slash + id.str() + questionMark + "website=pm";
+			string query = questionMark + "patientId=" + id.str() + ampersand + "website=pm";
 
 			url+= query;
 
