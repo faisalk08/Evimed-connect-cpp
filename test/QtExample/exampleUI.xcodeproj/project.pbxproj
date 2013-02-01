@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		D7BA7D76DAB5DD13389D6332 = {
+			buildActionMask = 2147483647;
+			files = (
+				);
+			generatedFileNames = (
+				);
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Qmake";
+			neededFileNames = (
+				);
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Users/indra/Documents/workspace_indigo/c++_project/exampleUI\ -f\ \'exampleUI.xcodeproj/qt_makeqmake.mak\'";
+		};
+		88593B2D44860C943CEECC4B = {
+			isa = PBXFileReference;
+			name = "exampleUI.cpp";
+			path = "src/exampleUI.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		8707BF91B3C866819AFB9053 = {
+			fileRef = "88593B2D44860C943CEECC4B";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		04C33B3D0D5C47415D3A0139 = {
+			isa = PBXFileReference;
+			name = "OauthClientUI.cpp";
+			path = "src/OauthClientUI.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		C338110094CFCBC20FB9F4F6 = {
+			fileRef = "04C33B3D0D5C47415D3A0139";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		6DC7D5057CA18AF3A13BE937 = {
+			isa = PBXFileReference;
+			name = "moc_OauthClientUI.cpp";
+			path = "moc_OauthClientUI.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		9A12B6B0BEE27957A4EC9340 = {
+			fileRef = "6DC7D5057CA18AF3A13BE937";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		008E9CC7CB61BF2A95E8406D = {
+			isa = PBXFileReference;
+			name = "OauthClientUI.h";
+			path = "src/OauthClientUI.h";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		D8679F14840094F466431CDA = {
+			isa = PBXFileReference;
+			name = "exampleUI.pro";
+			path = "exampleUI.pro";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		883D7615C4D2DE3FA1218F12 = {
+			isa = PBXGroup;
+			children = (
+				"F4AF6147B42623F6B3284738");
+			name = "Headers";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		F4AF6147B42623F6B3284738 = {
+			isa = PBXGroup;
+			children = (
+				"008E9CC7CB61BF2A95E8406D");
+			name = "src";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		06674E1DE8D3EB6E763DFFDA = {
+			isa = PBXGroup;
+			children = (
+				"88593B2D44860C943CEECC4B",
+				"04C33B3D0D5C47415D3A0139");
+			name = "src";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		FB61758D0F0FDA4BA867C3D5 = {
+			isa = PBXGroup;
+			children = (
+				"06674E1DE8D3EB6E763DFFDA");
+			name = "Sources";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		7CABE3C80E79AD2B307756D2 = {
+			isa = PBXGroup;
+			children = (
+				"D8679F14840094F466431CDA");
+			name = "Sources [qmake]";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		46E892BBB6BB6952967E0561 = {
+			isa = PBXGroup;
+			children = (
+				"6DC7D5057CA18AF3A13BE937");
+			name = "Temporary Sources";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		A0A52A2ADF7A1E2A99738674 = {
+			buildActionMask = 2147483647;
+			files = (
+				);
+			generatedFileNames = (
+				"8707BF91B3C866819AFB9053",
+				"C338110094CFCBC20FB9F4F6",
+				"9A12B6B0BEE27957A4EC9340");
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Preprocessors";
+			neededFileNames = (
+				"8707BF91B3C866819AFB9053",
+				"C338110094CFCBC20FB9F4F6",
+				"9A12B6B0BEE27957A4EC9340");
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Users/indra/Documents/workspace_indigo/c++_project/exampleUI\ -f\ \'exampleUI.xcodeproj/qt_preprocess.mak\'";
+		};
+		C29B8785722055ED95EF7B57 = {
+			buildActionMask = 2147483647;
+			files = (
+				"8707BF91B3C866819AFB9053",
+				"C338110094CFCBC20FB9F4F6",
+				"9A12B6B0BEE27957A4EC9340");
+			isa = PBXSourcesBuildPhase;
+			name = "Build Sources";
+		};
+		83B37B4E4A3A5F3B7235A107 = {
+			isa = PBXFileReference;
+			name = "Evimed-connect-cpp";
+			path = "../../../projects/development/github/Evimed-connect-cpp/Debug/libEvimed-connect-cpp.a";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		ACED54D9BD9C1A6DEB747321 = {
+			fileRef = "83B37B4E4A3A5F3B7235A107";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E7E2FF2E5A8F1012DF001E35 = {
+			isa = PBXFrameworkReference;
+			name = "QtWebKit.framework";
+			path = "/Library/Frameworks/QtWebKit.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		B198A42F9C7E6191234418CA = {
+			fileRef = "E7E2FF2E5A8F1012DF001E35";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		9B36DA7E32F0304E780E7972 = {
+			isa = PBXFrameworkReference;
+			name = "QtGui.framework";
+			path = "/Library/Frameworks/QtGui.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		501667F26B3C1FF6767A7C12 = {
+			fileRef = "9B36DA7E32F0304E780E7972";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		7BC2E65A5E699A5E5D834CA2 = {
+			isa = PBXFrameworkReference;
+			name = "QtCore.framework";
+			path = "/Library/Frameworks/QtCore.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		069D05B0128AE5DC7EE31738 = {
+			fileRef = "7BC2E65A5E699A5E5D834CA2";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		B6B9970B86A6C219B0869FE9 = {
+			isa = PBXFrameworkReference;
+			name = "QtNetwork.framework";
+			path = "/Library/Frameworks/QtNetwork.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3826A0833FCB54E86728C6EF = {
+			fileRef = "B6B9970B86A6C219B0869FE9";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		ED1E82605DD74B483AF3C982 = {
+			children = (
+				"83B37B4E4A3A5F3B7235A107",
+				"E7E2FF2E5A8F1012DF001E35",
+				"9B36DA7E32F0304E780E7972",
+				"7BC2E65A5E699A5E5D834CA2",
+				"B6B9970B86A6C219B0869FE9");
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			path = "";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		2A1043669E6E5A7426EA502A = {
+			buildActionMask = 2147483647;
+			files = (
+				"ACED54D9BD9C1A6DEB747321",
+				"B198A42F9C7E6191234418CA",
+				"501667F26B3C1FF6767A7C12",
+				"069D05B0128AE5DC7EE31738",
+				"3826A0833FCB54E86728C6EF");
+			isa = PBXFrameworksBuildPhase;
+			name = "Frameworks & Libraries";
+		};
+		3787F99312C85FF0073FD7BA = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXResourcesBuildPhase;
+			name = "Bundle Resources";
+		};
+		05596AB53D8D521C69802C27 = {
+			children = (
+				"FB61758D0F0FDA4BA867C3D5",
+				"46E892BBB6BB6952967E0561",
+				"883D7615C4D2DE3FA1218F12",
+				"7CABE3C80E79AD2B307756D2",
+				"ED1E82605DD74B483AF3C982");
+			isa = PBXGroup;
+			name = "exampleUI";
+			path = "";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		D8CB5C1CC0B5ADB71B03DCDA = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.application";
+			path = "exampleUI.app";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		068F80C7519D0528FB08E821 = {
+			children = (
+				"D8CB5C1CC0B5ADB71B03DCDA");
+			isa = PBXGroup;
+			name = "Products";
+			refType = 4;
+		};
+		A613C80A20BE4CB540246E2F = {
+			buildPhases = (
+				"D7BA7D76DAB5DD13389D6332",
+				"A0A52A2ADF7A1E2A99738674",
+				"C29B8785722055ED95EF7B57",
+				"2A1043669E6E5A7426EA502A",
+				"3787F99312C85FF0073FD7BA");
+			buildSettings = {
+				CC = "/usr/bin/gcc";
+				CPLUSPLUS = "/usr/bin/g++";
+				LEXFLAGS = "";
+				YACCFLAGS = "-d";
+				OTHER_REZFLAGS = "";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "";
+				PREBINDING = NO;
+				INFOPLIST_FILE = "Info.plist";
+				BUILD_ROOT = "/Users/indra/Documents/workspace_indigo/c++_project/exampleUI";
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-L/Library/Frameworks",
+						"-F/Library/Frameworks",
+						"-L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug",
+						"-lcurl");
+				DYLIB_CURRENT_VERSION = "1.0.0";
+				DYLIB_COMPATIBILITY_VERSION = "1.0";
+				MACOSX_DEPLOYMENT_TARGET = "10.4";
+				PRODUCT_NAME = "exampleUI";
+			};
+			conditionalBuildSettings = {
+			};
+			dependencies = (
+				);
+			productReference = "D8CB5C1CC0B5ADB71B03DCDA";
+			shouldUseHeadermap = 1;
+			buildConfigurationList = 17B3380A4D6A7D415E7F2E1E;
+			isa = PBXNativeTarget;
+			productType = "com.apple.product-type.application";
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist SYSTEM \"file://localhost/System/Library/DTDs/PropertyList.dtd\">
+<plist version=\"0.9\">
+<dict>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+ 	<key>CFBundleGetInfoString</key>
+	<string>Created by Qt/QMake</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>exampleUI</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.exampleUI</string>
+	<key>NOTE</key>
+	<string>This file was generated by Qt/QMake.</string>
+</dict>
+</plist>
+";
+			name = "exampleUI";
+			productName = "exampleUI";
+			startupPath = "<<ProjectDirectory>>";
+		};
+		4B72B24813252891014BCF61 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "exampleUI";
+				HEADER_SEARCH_PATHS = (
+					"/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/usr/include/QtCore",
+					"/Library/Frameworks/QtNetwork.framework/Versions/4/Headers",
+					"/usr/include/QtNetwork",
+					"/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/usr/include/QtGui",
+					"/Library/Frameworks/QtWebKit.framework/Versions/4/Headers",
+					"/usr/include/QtWebKit",
+					"/usr/include",
+					".",
+					"src",
+					"../../../projects/development/github/Evimed-connect-cpp/src",
+					"/usr/lib",
+					".",
+					"/usr/local/include",
+					"/System/Library/Frameworks/CarbonCore.framework/Headers",
+					"/usr/local/Qt4.8/mkspecs/macx-xcode");
+				LIBRARY_SEARCH_PATHS = (
+					"/Library/Frameworks",
+					"/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug");
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Library/Frameworks",
+					"/Library/Frameworks");
+				INFOPLIST_FILE = "Info.plist";
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_WEBKIT_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_WEBKIT_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-L/Library/Frameworks",
+						"-F/Library/Frameworks",
+						"-L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug",
+						"-lcurl");
+				ARCHS = "x86_64";
+			};
+			name = "Debug";
+		};
+		BEC09A62E69C3553534FF35E = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "exampleUI";
+				PRODUCT_NAME = "exampleUI";
+			};
+			name = "Debug";
+		};
+		2C641C3335766025DD51B7BD = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "exampleUI";
+			};
+			isa = "PBXBuildStyle";
+			name = "Debug";
+		};
+		D70590BEB531B51029F711BB = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "exampleUI";
+				HEADER_SEARCH_PATHS = (
+					"/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/usr/include/QtCore",
+					"/Library/Frameworks/QtNetwork.framework/Versions/4/Headers",
+					"/usr/include/QtNetwork",
+					"/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/usr/include/QtGui",
+					"/Library/Frameworks/QtWebKit.framework/Versions/4/Headers",
+					"/usr/include/QtWebKit",
+					"/usr/include",
+					".",
+					"src",
+					"../../../projects/development/github/Evimed-connect-cpp/src",
+					"/usr/lib",
+					".",
+					"/usr/local/include",
+					"/System/Library/Frameworks/CarbonCore.framework/Headers",
+					"/usr/local/Qt4.8/mkspecs/macx-xcode");
+				LIBRARY_SEARCH_PATHS = (
+					"/Library/Frameworks",
+					"/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug");
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Library/Frameworks",
+					"/Library/Frameworks");
+				INFOPLIST_FILE = "Info.plist";
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_WEBKIT_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_WEBKIT_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-L/Library/Frameworks",
+						"-F/Library/Frameworks",
+						"-L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug",
+						"-lcurl");
+				ARCHS = "x86_64";
+			};
+			name = "Release";
+		};
+		8C7174830A1E4DCBA0332EC1 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "exampleUI";
+				PRODUCT_NAME = "exampleUI";
+			};
+			name = "Release";
+		};
+		26DE8D2AEA4B3714B41E931F = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "exampleUI";
+			};
+			isa = "PBXBuildStyle";
+			name = "Release";
+		};
+		CC82A9286117DFED018F418F = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"4B72B24813252891014BCF61",
+				"D70590BEB531B51029F711BB");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = "Debug";
+		};
+		17B3380A4D6A7D415E7F2E1E = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"BEC09A62E69C3553534FF35E",
+				"8C7174830A1E4DCBA0332EC1");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = "Debug";
+		};
+		91B15E841AA80083484172DE = {
+			buildStyles = (
+				"2C641C3335766025DD51B7BD",
+				"26DE8D2AEA4B3714B41E931F");
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = "05596AB53D8D521C69802C27";
+			buildConfigurationList = "CC82A9286117DFED018F418F";
+			projectDirPath = "";
+			targets = (
+				"A613C80A20BE4CB540246E2F");
+		};
+	};
+	rootObject = "91B15E841AA80083484172DE";
+}
