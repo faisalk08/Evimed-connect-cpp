@@ -25,6 +25,7 @@ namespace com {
 			client = NULL;
 			init = false;
 			authenticated = false;
+			webView = NULL;
 
 			eConfig = eConf;
 			uConfig = uConf;
@@ -213,6 +214,27 @@ namespace com {
 				return "";
 			}
 
+			return response;
+
+		}
+
+		string OAuthClient::getData(string url, string &signedUrl){
+
+			string urlSigned;
+			string response;
+
+			urlSigned = getSignedUrl(url);
+
+			cout << "url Signed " + urlSigned<< endl;
+			signedUrl = urlSigned;
+			response = httpClient.get(urlSigned);
+			cout << "Response " + response << endl;
+
+			//If the response contains any of these sentences than return unsuccessfully attempt
+			if(response.find("This request requires HTTP authentication")!=string::npos || response.find("Login with your existing Evimed.com user name and password!")!=string::npos){
+//				logout();//try to logout from previous key and secret
+				return "";
+			}
 
 			return response;
 
@@ -417,6 +439,15 @@ namespace com {
 			}
 
 			return mapKeyValue;
+		}
+
+		QWebView* OAuthClient::getWebView(){
+			if(webView) return webView;
+
+			cout << "load webview" << endl;
+			WebView* view = new WebView();
+			webView = view->getWebView();
+			return webView;
 		}
 
 	}

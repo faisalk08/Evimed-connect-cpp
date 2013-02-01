@@ -7,6 +7,10 @@
 
 #ifndef EVIMEDCONNECT_H_
 #define EVIMEDCONNECT_H_
+#if __GNUC__ >= 4
+    #define DLL_PUBLIC __attribute__ ((visibility ("default")))
+    #define DLL_LOCAL  __attribute__ ((visibility ("hidden")))
+#endif
 
 #include <iostream>
 #include <liboauthcpp.h>
@@ -15,6 +19,8 @@
 #include <boost/property_tree/ini_parser.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
+#include <QtWebKit/QWebView>
+#include <WebView.h>
 
 using namespace std;
 using namespace OAuth;
@@ -35,6 +41,7 @@ namespace com {
 					string authorize(string userName, string password);
 					string access();
 					string getData(string url);
+					string getData(string url, string &signedUrl);
 					string getSignedUrl(string url, bool post=false);
 					string logout();
 					string serverUrl;
@@ -50,6 +57,9 @@ namespace com {
 
 					list<string> getJSONValue(string data, string arrayName, string key);
 					map<string, string> getJSONPair(string data, string arrayName);
+
+					QWebView* getWebView();
+					QWebView* webView;
 
 				private:
 					string consumerKey;
@@ -89,7 +99,6 @@ namespace com {
 					string trialsearch_url;
 
 					string emailAddress;
-
 
 				};
 
