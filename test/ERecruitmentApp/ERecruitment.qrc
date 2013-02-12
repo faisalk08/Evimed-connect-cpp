@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+ <qresource>
+     <file>config/evimed.config</file>
+     <file>config/user.properties</file>
+     <file>gui/eRecruitment.ui</file>
+ </qresource>
+ </RCC>
