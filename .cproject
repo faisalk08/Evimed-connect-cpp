@@ -25,10 +25,20 @@
 					<folderInfo id="cdt.managedbuild.config.macosx.lib.debug.1352961115." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.lib.debug.1310474043" name="MacOSX GCC" superClass="cdt.managedbuild.toolchain.gnu.macosx.lib.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.macosx.lib.debug.2121791561" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.macosx.lib.debug"/>
-							<builder buildPath="${workspace_loc:/Evimed-connect-cpp/Debug}" id="cdt.managedbuild.target.gnu.builder.macosx.lib.debug.258901925" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.macosx.lib.debug"/>
+							<builder buildPath="${workspace_loc:/Evimed-connect-cpp/Debug}" id="cdt.managedbuild.target.gnu.builder.macosx.lib.debug.258901925" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.macosx.lib.debug">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
+								</outputEntries>
+							</builder>
 							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.base.18081663" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.base"/>
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.base.1090932513" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.macosx.lib.debug.1115300103" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.macosx.lib.debug">
+								<option id="gnu.both.asm.option.include.paths.2033128763" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../Evimed-connect-cpp/Evimed-connect-cpp/src"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include"/>
+									<listOptionValue builtIn="false" value="../Evimed-connect-cpp/header"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.200016694" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.toolmacosx.lib.debug.gnu.archiver.1127028851" name="GCC Archiver" superClass="cdt.managedbuild.toolmacosx.lib.debug.gnu.archiver"/>
@@ -36,20 +46,31 @@
 								<option id="gnu.cpp.compiler.macosx.lib.debug.option.optimization.level.1277926273" name="Optimization Level" superClass="gnu.cpp.compiler.macosx.lib.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.macosx.lib.debug.option.debugging.level.1883139888" name="Debug Level" superClass="gnu.cpp.compiler.macosx.lib.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.629545014" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
+									<listOptionValue builtIn="false" value="../Evimed-connect-cpp/Evimed-connect-cpp/src"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/model}&quot;"/>
 									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/header}&quot;"/>
 								</option>
+								<option id="gnu.cpp.compiler.option.other.other.1164196778" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -static" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.359116127" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.macosx.lib.debug.1276686334" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.lib.debug">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.macosx.lib.debug.option.optimization.level.636056138" name="Optimization Level" superClass="gnu.c.compiler.macosx.lib.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.macosx.lib.debug.option.debugging.level.1110247043" name="Debug Level" superClass="gnu.c.compiler.macosx.lib.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.729778680" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../Evimed-connect-cpp/Evimed-connect-cpp/src"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include"/>
+									<listOptionValue builtIn="false" value="../Evimed-connect-cpp/header"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.430897527" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="model"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="util"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="oauth"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -97,8 +118,14 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="widget"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="oauth"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="services"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="model"/>
+						<entry excluding="header|services" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="header"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="util"/>
+						<entry excluding="model|header|oauth|widget|services|util|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
