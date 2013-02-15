@@ -44,7 +44,7 @@ all: ERecruitmentApp
 ERecruitmentApp: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++ -L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug -o "ERecruitmentApp" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup -o "ERecruitmentApp" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

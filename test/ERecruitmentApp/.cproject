@@ -28,7 +28,7 @@
 									<listOptionValue builtIn="false" value="Evimed-connect-cpp"/>
 								</option>
 								<option id="macosx.cpp.link.option.paths.1168793399" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.362896326" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -45,7 +45,8 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1830372829" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
-									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/src"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/header"/>
+									<listOptionValue builtIn="false" value="/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/model"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.500136820" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>

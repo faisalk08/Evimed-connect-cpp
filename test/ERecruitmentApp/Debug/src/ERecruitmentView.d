@@ -1,21 +1,20 @@
-src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QApplication \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobjectdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qnamespace.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qnamespace.h \
+src/ERecruitmentView.d src/ERecruitmentView.o:  \
+ ../src/ERecruitmentView.cpp ../src/ERecruitmentView.h \
+  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/evimedConnect.h \
+  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/liboauthcpp.h \
+  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/HttpClient.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/qwebview.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebview.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebkitglobal.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qglobal.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qglobal.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qconfig.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qconfig.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfeatures.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qfeatures.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebsettings.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstring.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qstring.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qchar.h \
@@ -32,54 +31,44 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/arch/qatomic_macosx.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qatomic_x86_64.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/arch/qatomic_x86_64.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qlist.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qlist.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiterator.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qiterator.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qalgorithms.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qalgorithms.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qscopedpointer.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h \
-  /Users/indra/Documents/workspace_indigo/c++_project/ERecruitmentApp/src/ERecruitmentView.h \
-  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/evimedConnect.h \
-  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/liboauthcpp.h \
-  /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/HttpClient.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/qwebview.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebview.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebkitglobal.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.h \
-  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebsettings.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qnamespace.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qnamespace.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpixmap.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/image/qpixmap.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpaintdevice.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/painting/qpaintdevice.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobjectdefs.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qrect.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qrect.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcolor.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/painting/qcolor.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qrgb.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/painting/qrgb.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstringlist.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qstringlist.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qalgorithms.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qalgorithms.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdatastream.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qdatastream.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qscopedpointer.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiodevice.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qiodevice.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qlist.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qlist.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiterator.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qiterator.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qregexp.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qregexp.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstringmatcher.h \
@@ -130,6 +119,8 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/text/qfontinfo.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qsizepolicy.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qsizepolicy.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qkeysequence.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qkeysequence.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpainter.h \
@@ -442,6 +433,8 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventtransition.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/statemachine/qeventtransition.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstracttransition.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfinalstate.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/statemachine/qfinalstate.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstractstate.h \
@@ -480,10 +473,13 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qtextstream.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstracteventdispatcher.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qabstracteventdispatcher.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstractitemmodel.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qbasictimer.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qbasictimer.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h \
+  /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qmath.h \
@@ -521,27 +517,21 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtUiTools/../../tools/designer/src/uitools/quiloader.h \
   /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/QScopedPointer
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/QApplication:
+../src/ERecruitmentView.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qapplication.h:
+/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/evimedConnect.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qapplication.h:
+/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/liboauthcpp.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h:
+/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/HttpClient.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/qwebview.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebview.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobjectdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qnamespace.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qnamespace.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebkitglobal.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qglobal.h:
 
@@ -554,6 +544,10 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfeatures.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qfeatures.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebsettings.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qstring.h:
 
@@ -587,69 +581,9 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/arch/qatomic_x86_64.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qlist.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qnamespace.h:
 
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qlist.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiterator.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qiterator.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qalgorithms.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qalgorithms.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qscopedpointer.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h:
-
-/Users/indra/Documents/workspace_indigo/c++_project/ERecruitmentApp/src/ERecruitmentView.h:
-
-/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/evimedConnect.h:
-
-/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/liboauthcpp.h:
-
-/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug/backup/HttpClient.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/QWebView:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/qwebview.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebview.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebkitglobal.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.h:
-
-/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtWebKit/../../src/3rdparty/webkit/Source/WebKit/qt/Api/qwebsettings.h:
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/global/qnamespace.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qpixmap.h:
 
@@ -659,9 +593,29 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/painting/qpaintdevice.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qwindowdefs.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qwindowdefs.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobjectdefs.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobjectdefs.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qmacdefines_mac.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qmacdefines_mac.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qrect.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qrect.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qsize.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qsize.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qpoint.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qpoint.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcolor.h:
 
@@ -675,13 +629,33 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qstringlist.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qalgorithms.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qalgorithms.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qdatastream.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qdatastream.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qscopedpointer.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qscopedpointer.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiodevice.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/io/qiodevice.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qobject.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qobject.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qlist.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qlist.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qiterator.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/tools/qiterator.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qregexp.h:
 
@@ -782,6 +756,10 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qsizepolicy.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qsizepolicy.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qcursor.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/../../src/gui/kernel/qcursor.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtGui/qkeysequence.h:
 
@@ -1407,6 +1385,10 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstracttransition.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreevent.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qfinalstate.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/statemachine/qfinalstate.h:
@@ -1483,6 +1465,10 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qabstracteventdispatcher.h:
 
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qeventloop.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qeventloop.h:
+
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qabstractitemmodel.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qbasictimer.h:
@@ -1490,6 +1476,8 @@ src/ERecruitmentApp.d src/ERecruitmentApp.o: ../src/ERecruitmentApp.cpp \
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qbasictimer.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreapplication.h:
+
+/Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/../../src/corelib/kernel/qcoreapplication.h:
 
 /Users/indra/Documents/projects/development/Library/qt-everywhere-opensource-src-4.8.4/include/QtCore/qcoreevent.h:
 

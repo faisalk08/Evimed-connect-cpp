@@ -14,8 +14,8 @@ static string loginHtml =
 		"</html>";
 
 static string resourceFolder = "/ERecruitmentApp.app/Contents/Resources";
-static string serverAddress = "http://192.168.207.117:9091";
-static string eRecruitmentAddress = "http://192.168.207.117:9745/erecruitment/";
+static string serverAddress = "http://www.evimed.com";
+static string eRecruitmentAddress = "http://www.evimed.com/erecruitment/";
 static string profileAddress = "/services/oauth/rest/profile";
 
 ERecruitmentView::ERecruitmentView(QWidget *widget) : QWidget (widget){
@@ -131,9 +131,11 @@ void ERecruitmentView::loadClient(){
 
 	string evimedConfig = homePath + "/config/evimed.config";
 	string userConfig = homePath + "/config/user.properties";
-
-	client = OAuthClient(serverAddress, evimedConfig, userConfig);
-	if(client.isAuthenticated()){
+	//client = OAuthClient(serverAddress, evimedConfig, userConfig);
+	EvimedConnect* evimedConnectFactory = EvimedConnect::getInstance();
+	evimedConnectFactory->init("user", evimedConfig, userConfig);
+	client = evimedConnectFactory->getOAuthClient();
+	if(client->isAuthenticated()){
 		viewLogin();
 	}
 }
@@ -162,7 +164,8 @@ void ERecruitmentView::viewLogoff(){
 
 void ERecruitmentView::displayWebsite(string address){
 	string signedUrl;
-	signedUrl = client.getSignedUrl(address, false);
+	signedUrl = client->getSignedUrl(address, false);
+	cout << "hello " + signedUrl<< endl;
 	wvPatient->load(QUrl(signedUrl.c_str()));
 	wvPatient->show();
 }
@@ -170,7 +173,7 @@ void ERecruitmentView::displayWebsite(string address){
 void ERecruitmentView::authenticate(){
 	string response;
 	cout << "You are not login, please login first!" << endl;
-	response = client.request();
+	response = client->request();
 
 	wvPatient->load(QUrl(response.c_str()));
 	wvPatient->show();
@@ -183,10 +186,10 @@ void ERecruitmentView::loadFinished(){
 	string response;
 
 	if(wvPatient->page()->findText(authorizeText.c_str())){
-		response = client.access();
+		response = client->access();
 		cout << "accessing " << endl;
 		//if(response.find(accessText)!=string::npos){
-		if(client.isAuthenticated()){
+		if(client->isAuthenticated()){
 			viewLogin();
 		}
 
@@ -196,26 +199,45 @@ void ERecruitmentView::loadFinished(){
 
 void ERecruitmentView::loadPatientList(){
 	string response;
-	list<map<string, string> > result;
+	//list<map<string, string> > result;
 
-	response = client.getData(serverAddress + profileAddress);
-	string emailAddress = client.getJSONValue(response, "emailAddress");
-	lblEmailAddress->setText(emailAddress.c_str());
-//	string cm = client.getJSONArrayValue(response, "centers", "name").front();
+	//response = client->getData(serverAddress + profileAddress);
+
+//	EvimedService* profileService = new EvimedService(serverAddress + profileAddress);
+	map<string, string> param;
+//	param.insert(pair<string, string>("website","pm"));
+//	list<EvimedModel> profiles = profileService->search(param, false);
+//	string emailAddress = profiles.begin()->get("emailAddress");
+//	cout << "done " << endl;
+
+	//string emailAddress = client->getJSONValue(response, "emailAddress");
+//	lblEmailAddress->setText(emailAddress.c_str());
+//	string cm = client->getJSONArrayValue(response, "centers", "name").front();
 //	lblCenterName->setText(cm.c_str());
-//	string center = client.getJSONString(response, "centers");
-//	string dm = client.getJSONArrayValue(center, "departments", "name").front();
+//	string center = client->getJSONString(response, "centers");
+//	string dm = client->getJSONArrayValue(center, "departments", "name").front();
 //	lblDepartmentName->setText(dm.c_str());
 
-	response = client.getPatient();
-	result = client.getJSONArrayPair(response, "result");
+	//response = client->getPatient();
+	//result = client->getJSONArrayPair(response, "result");
+
+	string patientUrl = "/services/oauth/rest/patient";
+	EvimedService* patientService = new EvimedService(serverAddress + patientUrl);
+
+	param.clear();
+	param.insert(pair<string, string>("website","pm"));
+	param.insert(pair<string, string>("start","0"));
+	param.insert(pair<string, string>("end","10"));
+	EvimedSearchModel searchResult = patientService->search(param);
+	list<EvimedModel> result = searchResult.getResults();
 
 	map<string, string> mapResult;
 	QMap<QString, QVariant> mapAll;
 
-	for (list<map<string, string> >::iterator var = result.begin(); var != result.end(); ++var) {
+	//for (list<map<string, string> >::iterator var = result.begin(); var != result.end(); ++var) {
+	for (list<EvimedModel >::iterator patient = result.begin(); patient != result.end(); ++patient) {
 
-		mapResult = *var;
+		mapResult = patient->getMap();
 		QMap<QString, QVariant> mapVariant;
 		for (map<string, string>::iterator it = mapResult.begin(); it != mapResult.end(); ++it) {
 			mapVariant.insert(QString(it->first.c_str()), QVariant(it->second.c_str()));//{key, value} e.g. {patientCode:'test', patientId:0}
@@ -226,7 +248,8 @@ void ERecruitmentView::loadPatientList(){
 		string url = eRecruitmentAddress + "?patientId=" + patientId;
 		mapVariant.insert("URL", url.c_str());
 
-		cmbPatientList->addItem(mapResult.find("patientCode")->second.c_str(), QVariant(mapVariant));//{PatientCode, {key, value}}
+		//cmbPatientList->addItem(mapResult.find("patientCode")->second.c_str(), QVariant(mapVariant));//{PatientCode, {key, value}}
+		cmbPatientList->addItem(patient->get("patientCode").c_str(), QVariant(mapVariant));//{PatientCode, {key, value}}
 
 		mapAll.insert(mapResult.find("patientCode")->second.c_str(), mapResult.find("patientId")->second.c_str());
 
@@ -242,7 +265,7 @@ void ERecruitmentView::displayDetail(int index){
 	string signedUrl;
 	cout << "display Detail" << endl;
 
-	//string response = client.getPatient(cmbPatientList->itemText(index).toInt());
+	//string response = client->getPatient(cmbPatientList->itemText(index).toInt());
 	//cmbPatientList->itemText(index).toStdString()
 	QVariant var = cmbPatientList->itemData(index);
 	QMap<QString, QVariant> mapVariant = var.toMap();
@@ -281,12 +304,12 @@ void ERecruitmentView::login(){
 
 		btnLogin->setText("Please finish the login...");
 
-		if(!client.isAuthenticated()){
+		if(!client->isAuthenticated()){
 			authenticate();
 		}
 
 	}else{
-		client.logout();
+		client->logout();
 
 		viewLogoff();
 	}

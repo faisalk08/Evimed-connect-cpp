@@ -22,6 +22,5 @@ int main(int argc, char **argv) {
 	eRecruitmentView.setWindowTitle(appName.c_str());
 	eRecruitmentView.show();
 
-
 	return app.exec();
 }

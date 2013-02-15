@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = 
 DEPENDPATH += . src
-INCLUDEPATH += . src /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/src /usr/lib
+INCLUDEPATH += . src /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/header /Users/indra/Documents/projects/development/github/Evimed-connect-cpp/model /usr/lib
 LIBS += -L/Users/indra/Documents/projects/development/github/Evimed-connect-cpp/Debug -lEvimed-connect-cpp -lcurl
 QT += webkit network
 CONFIG += uitools

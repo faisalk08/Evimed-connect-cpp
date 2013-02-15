@@ -7,7 +7,9 @@
 
 #ifndef ERECRUITMENTVIEW_H_
 #define ERECRUITMENTVIEW_H_
-#include <evimedConnect.h>
+#include <EvimedConnect.h>
+#include <EvimedModel.h>
+#include <EvimedService.h>
 
 #include <iostream>
 
@@ -21,9 +23,12 @@
 #include <QtGui/QTableWidget>
 #include <QtWebKit/QWebView>
 #include <QtUiTools/QtUiTools>
+#include <unistd.h>
 
 using namespace std;
-using namespace com::evimed::portal::EvimedConnect;
+//using namespace com::evimed::portal::EvimedConnect;
+using namespace com::evimed::portal;
+using namespace model;
 
 class ERecruitmentView : public QWidget{
 	Q_OBJECT
@@ -60,7 +65,8 @@ private:
 	string homePath;
 //	string serverAddress;
 //	string eRecruitmentAddress;
-	OAuthClient client;
+	OAuthClient* client;
+	EvimedConnect* evimedConnectFactory;
 
 };
 
