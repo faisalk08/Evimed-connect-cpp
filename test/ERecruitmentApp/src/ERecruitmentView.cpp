@@ -229,13 +229,13 @@ void ERecruitmentView::loadPatientList(){
 	param.insert(pair<string, string>("start","0"));
 	param.insert(pair<string, string>("end","10"));
 	EvimedSearchModel searchResult = patientService->search(param);
-	list<EvimedModel> result = searchResult.getResults();
+	list<EvimedModel> patients = searchResult.getResults();
 
 	map<string, string> mapResult;
 	QMap<QString, QVariant> mapAll;
 
 	//for (list<map<string, string> >::iterator var = result.begin(); var != result.end(); ++var) {
-	for (list<EvimedModel >::iterator patient = result.begin(); patient != result.end(); ++patient) {
+	for (list<EvimedModel >::iterator patient = patients.begin(); patient != patients.end(); ++patient) {
 
 		mapResult = patient->getMap();
 		QMap<QString, QVariant> mapVariant;
