@@ -33,11 +33,13 @@ public:
 	string access();
 	string getData(string url);
 	string getData(string url, string &signedUrl);
-	string getSignedUrl(string url, bool post=false);
+	string postData(string url, string data);
+	string putData(string url, string data);
+	string deleteData(string url);
+	string getSignedUrl(string url, bool post=false, bool remove=false, bool put=false);
 	string logout();
 	string serverUrl;
 	bool isAuthenticated();
-	string postData(string url, string data);
 
 private:
 	string consumerKey;
@@ -51,6 +53,8 @@ private:
 	bool initClient(string oauth_key = "", string oauth_secret = "");
 	string getQuery(string url, bool withPin=false);
 	string postQuery(string url, bool withPin=false);
+	string deleteQuery(string url, bool withPin=false);
+	string putQuery(string url, bool withPin=false);
 	//string readJsonValue(string jsonData, string key);
 
 	string request_token_url;

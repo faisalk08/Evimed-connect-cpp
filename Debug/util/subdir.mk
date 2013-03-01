@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../util/EvimedUtil.cpp \
 ../util/HttpClient.cpp \
 ../util/JSONUtil.cpp 
 
 OBJS += \
+./util/EvimedUtil.o \
 ./util/HttpClient.o \
 ./util/JSONUtil.o 
 
 CPP_DEPS += \
+./util/EvimedUtil.d \
 ./util/HttpClient.d \
 ./util/JSONUtil.d 
 

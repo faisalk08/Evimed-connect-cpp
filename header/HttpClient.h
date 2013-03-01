@@ -19,6 +19,8 @@ public:
 
 	string get(string url, bool write=false);
 	string post(string url, string query="", bool write=false);
+	string remove(string url);
+	string put(string url, string query="");
 
 private:
 

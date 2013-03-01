@@ -83,6 +83,31 @@ string HttpClient::get(string url, bool write){
 	return content;
 }
 
+string HttpClient::remove(string url){
+	CURL *curl;
+	CURLcode code;
+	string content = "";
+
+	curl = curl_easy_init();
+	if(curl){
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_response);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &content);
+		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1 );
+		curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+
+		code = curl_easy_perform(curl);
+
+		if(code!=CURLE_OK){
+			fprintf(stderr, "curl_easy_perform() failed: %s \n", curl_easy_strerror(code));
+		}
+
+		curl_easy_cleanup(curl);
+	}
+
+	return content;
+}
+
 string HttpClient::post(string url, string query, bool write){
 	cout << "HTTP Post" << endl;
 
@@ -123,6 +148,43 @@ string HttpClient::post(string url, string query, bool write){
 //		else
 //		curl_easy_setopt(curl, CURLOPT_AUTOREFERER, 1 );
 //		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1 );
+
+		code = curl_easy_perform(curl);
+		if(code!=CURLE_OK)
+			fprintf(stderr, "perform failed: %s\n", curl_easy_strerror(code));
+
+		curl_easy_cleanup(curl);
+
+	}
+	curl_global_cleanup();
+	return content;
+}
+
+string HttpClient::put(string url, string query){
+	cout << "HTTP Post" << endl;
+
+	CURL *curl;
+	CURLcode code;
+	struct curl_slist *headers = NULL;
+	string content = "";
+
+	struct WriteThis pooh;
+	const char *data= query.c_str();
+	pooh.readptr = data;
+	pooh.sizeleft = (long) strlen(data);
+
+	headers = curl_slist_append(headers, "Content-Type: application/json");
+	headers = curl_slist_append(headers, "charsets: utf-8");
+
+	curl_global_init(CURL_GLOBAL_ALL);
+	curl = curl_easy_init();
+	if(curl){
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_PUT, 1L);
+		curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_response);
+		curl_easy_setopt(curl, CURLOPT_READDATA, &pooh);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, pooh.sizeleft);
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
 		code = curl_easy_perform(curl);
 		if(code!=CURLE_OK)

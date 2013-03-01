@@ -176,6 +176,24 @@ string OAuthClient::postQuery(string url, bool withPin){
 	return queryString;
 }
 
+string OAuthClient::deleteQuery(string url, bool withPin){
+	cout << "query Delete url " + url << endl;
+
+	if(client==0) cout << "client is empty" << endl;
+	string queryString = client->getURLQueryString(OAuth::Http::Delete, url, "", withPin);
+
+	return queryString;
+}
+//Not yet implemented in libouathcpp
+string OAuthClient::putQuery(string url, bool withPin){
+	cout << "query PUT url " + url << endl;
+
+	if(client==0) cout << "client is empty" << endl;
+	string queryString = client->getURLQueryString(OAuth::Http::Post, url, "", withPin);
+
+	return queryString;
+}
+
 string OAuthClient::request(){
 	if(init) initClient(); else initialize();
 
@@ -267,6 +285,28 @@ string OAuthClient::getData(string url, string &signedUrl){
 
 }
 
+string OAuthClient::putData(string url, string data){
+
+	string urlSigned;
+	string response;
+
+	urlSigned = getSignedUrl(url, false, false, true);
+
+	cout << " url Signed " + urlSigned<< endl;
+	response = httpClient.put(urlSigned, data);
+	cout << "Response " + response << endl;
+
+	//If the response contains any of these sentences than return unsuccessfully attempt
+	if(response.find("This request requires HTTP authentication")!=string::npos ||
+			response.find("Login with your existing Evimed.com user name and password!")!=string::npos){
+//				logout();//try to logout previous key and secret
+		return "";
+	}
+
+	return response;
+
+}
+
 string OAuthClient::postData(string url, string data){
 
 	string urlSigned;
@@ -289,7 +329,29 @@ string OAuthClient::postData(string url, string data){
 
 }
 
-string OAuthClient::getSignedUrl(string url, bool post){
+string OAuthClient::deleteData(string url){
+
+	string urlSigned;
+	string response;
+
+	urlSigned = getSignedUrl(url, false, true);
+
+	cout << " url Signed " + urlSigned<< endl;
+	response = httpClient.remove(urlSigned);
+	cout << "Response " + response << endl;
+
+	//If the response contains any of these sentences than return unsuccessfully attempt
+	if(response.find("This request requires HTTP authentication")!=string::npos ||
+			response.find("Login with your existing Evimed.com user name and password!")!=string::npos){
+//				logout();//try to logout previous key and secret
+		return "";
+	}
+
+	return response;
+
+}
+
+string OAuthClient::getSignedUrl(string url, bool post, bool remove, bool put){
 //			cout << "Get URL signed" << endl;
 
 	string urlSigned="";
@@ -297,10 +359,16 @@ string OAuthClient::getSignedUrl(string url, bool post){
 	size_t pos = url.find(questionMark);
 
 	string query;
-	if(post)
-		query = postQuery(url, true);
+	if(remove)
+		query = deleteQuery(url, true);
 	else
-		query = getQuery(url, true);
+		if(post)
+			query = postQuery(url, true);
+		else
+			if(put)
+				query = putQuery(url, true);
+			else
+				query = getQuery(url, true);
 
 	if(pos!=string::npos){ // if '?' found
 		parameter = url.substr(pos+1, url.size()-1);

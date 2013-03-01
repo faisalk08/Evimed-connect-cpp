@@ -8,21 +8,24 @@ CPP_SRCS += \
 ../model/EvimedModel.cpp \
 ../model/EvimedSearchModel.cpp \
 ../model/EvimedService.cpp \
-../model/Patient.cpp 
+../model/Patient.cpp \
+../model/PatientService.cpp 
 
 OBJS += \
 ./model/EvimedConfig.o \
 ./model/EvimedModel.o \
 ./model/EvimedSearchModel.o \
 ./model/EvimedService.o \
-./model/Patient.o 
+./model/Patient.o \
+./model/PatientService.o 
 
 CPP_DEPS += \
 ./model/EvimedConfig.d \
 ./model/EvimedModel.d \
 ./model/EvimedSearchModel.d \
 ./model/EvimedService.d \
-./model/Patient.d 
+./model/Patient.d \
+./model/PatientService.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

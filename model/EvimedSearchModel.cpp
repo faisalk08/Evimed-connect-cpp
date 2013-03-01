@@ -43,7 +43,7 @@ void EvimedSearchModel::loopData(string data, EvimedModel* model, string arrayNa
 	model = new EvimedModel(JSONUtil::getJSONPair(data, arrayName));
 }
 
-EvimedModel EvimedSearchModel::loopData(ptree tree, string arrayName){
+//EvimedModel EvimedSearchModel::loopData(ptree tree, string arrayName){
 //	EvimedModel model;
 //	for (ptree::iterator it = tree.begin(); it != tree.end(); ++it) {
 //		string key(it->first.data());
@@ -56,7 +56,7 @@ EvimedModel EvimedSearchModel::loopData(ptree tree, string arrayName){
 //	}
 //
 //	return model;
-}
+//}
 
 EvimedSearchModel::~EvimedSearchModel() {
 	// TODO Auto-generated destructor stub

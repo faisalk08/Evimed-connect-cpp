@@ -16,9 +16,11 @@
 #include <EvimedConnect.h>
 #include <EvimedSearchModel.h>
 #include <../header/OAuthClient.h>
+#include <../util/EvimedUtil.h>
 using namespace std;
 using namespace oauth;
 using namespace com::evimed::portal;
+using namespace util;
 
 namespace model {
 
@@ -27,9 +29,15 @@ public:
 	EvimedService();
 	EvimedService(string api);
 	EvimedService(OAuthClient client, EvimedConfig config);
+	EvimedSearchModel add(string data);
+	EvimedSearchModel add(EvimedModel data);
+	EvimedSearchModel update(map<string, string> search, EvimedModel data);
+	EvimedSearchModel remove(EvimedModel data);
+	EvimedSearchModel remove(string id);
 	list<EvimedModel> search(map<string, string> search, bool list);
 	EvimedSearchModel search(map<string, string> search);
 	EvimedModel details(string id);
+	OAuthClient* getOAuthClient();
 
 	void update(EvimedModel model);
 	virtual ~EvimedService();

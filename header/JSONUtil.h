@@ -13,9 +13,8 @@
 using namespace std;
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
-#include <EvimedModel.h>
 using namespace boost::property_tree;
-using namespace model;
+//using namespace model;
 
 namespace util {
 
@@ -31,7 +30,8 @@ public:
 	static list <map<string, string> > getJSONArrayPair(string data, string arrayName);
 	static list <map<string, string> > getJSONArrayPair(string data);
 	static string readJsonValue(string jsonData, string key);
-	static void loopArrayData(string data, list<EvimedModel>* listModel, string arrayName);
+	//static void loopArrayData(string data, list<EvimedModel>* listModel, string arrayName);
+	static string createJSONString(map<string, string> data);
 	//virtual ~JSONUtil();
 
 private:

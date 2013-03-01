@@ -159,7 +159,7 @@ map<string, string> JSONUtil::getJSONPair(string data, string arrayName){
 	return mapKeyValue;
 }
 
-void JSONUtil::loopArrayData(string data, list<EvimedModel>* listModel, string arrayName){
+/*void JSONUtil::loopArrayData(string data, list<EvimedModel>* listModel, string arrayName){
 	list<map<string, string> > listResult;
 	if(arrayName=="")
 		listResult = getJSONArrayPair(data);
@@ -169,6 +169,41 @@ void JSONUtil::loopArrayData(string data, list<EvimedModel>* listModel, string a
 	for (list<map<string, string> >::iterator it = listResult.begin(); it != listResult.end(); ++it) {
 		listModel->push_front(EvimedModel(*it));
 	}
+}*/
+
+string JSONUtil::createJSONString(map<string, string> data){
+	string lineFeed = "\n";
+	ptree jsonString;
+
+	for (map<string, string>::iterator it = data.begin();  it!= data.end(); ++it) {
+		jsonString.put(it->first, it->second);
+	}
+
+	stringstream ss;
+	write_json(ss, jsonString, false);
+
+	const char *s = ss.str().c_str();
+	string temp(s);
+	//ss.str().copy(temp, s, ss.str().length());
+	//s[strcspn(s,"\n")] ='\0';
+	//cout << s << endl;
+//	char* ptr;
+//	if( (ptr = strchr(ss.str().c_str(), '\n')) != NULL)
+//	    *ptr = '\0';
+//	while(*s && *s != '\n' && *s != '\r') s++;
+//	*s=0;
+	unsigned int pos = temp.find(lineFeed);
+	temp.replace(pos, lineFeed.length(), "asasdas");
+	while(pos!=string::npos){
+		pos++;
+		pos = temp.find(lineFeed, pos);
+		temp.replace(pos, lineFeed.length(), "asasdas");
+	}
+
+	cout << ss.str() << endl;
+	cout << temp << endl;
+
+	return ss.str();
 }
 
 } /* namespace util */

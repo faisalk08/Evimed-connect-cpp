@@ -16,11 +16,16 @@ EvimedService::EvimedService() {
 EvimedService::EvimedService(string api){
 	this->api = api;
 	this->aouthClient = EvimedConnect::getInstance()->getOAuthClient();
+
 }
 
 EvimedService::EvimedService(OAuthClient client, EvimedConfig config) {
 	// TODO Auto-generated constructor stub
 
+}
+
+OAuthClient* EvimedService::getOAuthClient(){
+	return this->aouthClient;
 }
 
 EvimedModel EvimedService::details(string id){
@@ -33,6 +38,46 @@ EvimedSearchModel EvimedService::search(map<string, string> search){
 	searchUrl = mapToString(search);
 	searchUrl = api + searchUrl;
 	string response = this->aouthClient->getData(searchUrl);
+	return EvimedSearchModel(response);
+}
+
+EvimedSearchModel EvimedService::add(string data){
+	string searchUrl;
+	searchUrl = api;
+
+	string response = this->aouthClient->postData(searchUrl, data);
+	return EvimedSearchModel(response);
+}
+
+
+EvimedSearchModel EvimedService::add(EvimedModel data){
+	string searchUrl;
+	searchUrl = api;
+
+	string response = this->aouthClient->postData(searchUrl, data.toString());
+	return EvimedSearchModel(response);
+}
+
+
+EvimedSearchModel EvimedService::update(map<string, string> search, EvimedModel data){
+	string searchUrl;
+	searchUrl = mapToString(search);
+	searchUrl = api + "/" + data.get("id") + searchUrl;
+	string response = this->aouthClient->putData(searchUrl, data.toString());
+	return EvimedSearchModel(response);
+}
+
+EvimedSearchModel EvimedService::remove(EvimedModel data){
+	string searchUrl;
+	searchUrl = api + "/" + data.get("id");
+	string response = this->aouthClient->deleteData(searchUrl);
+	return EvimedSearchModel(response);
+}
+
+EvimedSearchModel EvimedService::remove(string id){
+	string searchUrl;
+	searchUrl = api + "/" + id;
+	string response = this->aouthClient->deleteData(searchUrl);
 	return EvimedSearchModel(response);
 }
 
@@ -56,7 +101,7 @@ list<EvimedModel> EvimedService::search(map<string, string> search, bool isList)
 	string response = this->aouthClient->getData(searchUrl);
 
 	list<EvimedModel> models;
-	JSONUtil::loopArrayData(response, &models, "");
+	EvimedUtil::loopArrayData(response, &models, "");
 
 	return models;
 }
